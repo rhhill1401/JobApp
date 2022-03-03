@@ -1,4 +1,7 @@
-export const Alert = (props) => {
-  return <div className={props.status}>Alert</div>;
+import { useAppContext } from "../Context/appContext";
+
+export const Alert = () => {
+  const { alertType, alertText } = useAppContext();
+  return <div className={`alert alert-${alertType}`}>{alertText}</div>;
 };
 export default Alert;
